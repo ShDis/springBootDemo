@@ -19,9 +19,14 @@ public class BookControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+    //public void getHello() throws Exception {
+    //    mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+    //            .andExpect(status().isOk())
+    //            .andExpect(content().string(equalTo("Hello, my friend!")));
+    //}
+    public void postSave() throws Exception{
+        mvc.perform(MockMvcRequestBuilders.post("/save").content("aaa"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Hello, my friend!")));
+                .andExpect((content().string(equalTo("{\"id\":1,\"name\":\"aaa\"}"))));
     }
 }

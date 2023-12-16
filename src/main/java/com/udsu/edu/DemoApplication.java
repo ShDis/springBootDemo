@@ -11,3 +11,4 @@ public class DemoApplication {
 	}
 
 }
+//curl -X POST --data 'aaa' http://localhost:8080/save
