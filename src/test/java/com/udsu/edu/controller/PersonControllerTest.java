@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -14,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc
 @SpringBootTest
-public class BookControllerTest {
+public class PersonControllerTest {
     @Autowired
     private MockMvc mvc;
 
@@ -25,8 +24,8 @@ public class BookControllerTest {
     //            .andExpect(content().string(equalTo("Hello, my friend!")));
     //}
     public void postSave() throws Exception{
-        mvc.perform(MockMvcRequestBuilders.post("/save").content("Война и мир"))
+        mvc.perform(MockMvcRequestBuilders.post("/save").content("Василий"))
                 .andExpect(status().isOk())
-                .andExpect((content().string(equalTo("{\"id\":1,\"name\":\"Война и мир\"}"))));
+                .andExpect((content().string(equalTo("{\"id\":1,\"name\":\"Василий\"}"))));
     }
 }

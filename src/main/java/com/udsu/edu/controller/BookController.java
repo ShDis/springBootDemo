@@ -10,10 +10,12 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    //@GetMapping(name="/hello", consumes="application/json")
-    //public String hello(@RequestParam(value = "name", defaultValue = "my friend") String name) {
-      //  return String.format("Hello, %s!", name);
-    //}
+    /*
+    @GetMapping(name="/hello", consumes="application/json")
+    public String hello(@RequestParam(value = "name", defaultValue = "my friend") String name) {
+        return String.format("Hello, %s!", name);
+    }
+    */
 
     @PostMapping("/save")
     public Book save(@RequestBody String name){
